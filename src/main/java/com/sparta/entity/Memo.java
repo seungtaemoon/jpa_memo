@@ -1,8 +1,12 @@
 package com.sparta.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity // JPA가 관리할 수 있는 Entity 클래스 지정
+@Setter
+@Getter
 @Table(name = "memo") // 매핑할 테이블의 이름을 지정
 public class Memo {
     @Id // 기본키 지정
@@ -28,5 +32,18 @@ public class Memo {
 
     public void setContents(String contents) {
         this.contents = contents;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public String getUsername() {
+        return this.username;
+    }
+
+
+    public String getContents() {
+        return this.contents;
     }
 }
